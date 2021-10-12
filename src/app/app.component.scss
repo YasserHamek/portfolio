@@ -1,0 +1,102 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 0.5rem;
+
+  #header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+
+    #about-me {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #profil-picture{
+      height: 250px;
+      width: 250px;
+      border-radius: 20px;
+      border: 1px solid black;
+    }
+
+    #presentation {
+      max-width: 350px;
+      background-color: rgba(192, 189, 189, 0.555);
+      font-size: 1rem;
+      text-align: justify;
+      color: black;
+      border-radius: 10px;
+    }
+  }
+
+  #body {
+    display: flex;
+    flex-direction: column;
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .project-picture-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 3px;
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width: 600px;
+
+        .project-picture {
+          border: 1px solid black;
+          width: 100%;
+          height: auto;
+        }
+
+        .button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+          padding: 0px;
+          height: min-content;
+          min-width: min-content;
+        }
+      }
+
+      .project-footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .project-description {
+          background-color: rgba(192, 189, 189, 0.555);
+          font-size: 1rem;
+          text-align: justify;
+          color: black;
+          margin-left: 3rem;
+          margin-right: 3rem;
+          border-radius: 10px;
+        }
+
+        .project-technologie {
+          background-color: rgba(192, 189, 189, 0.555);
+          font-size: 1rem;
+          text-align: justify;
+          color: black;
+          margin-left: 3rem;
+          margin-right: 3rem;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  #footer {
+
+  }
+}

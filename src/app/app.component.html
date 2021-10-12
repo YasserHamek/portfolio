@@ -1,0 +1,65 @@
+<div id="container">
+  <div id="header">
+    <div id="about-me">
+      <h1>About me</h1>
+      <mat-card id="presentation">
+        <mat-card-content>
+          <p>
+            Je m’appelle Yasser Hamek, j’ai 28ans j’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
+            et j’ai récemment été diplômé de l’université de Rennes 1 avec un Master en Informatique.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <img id="profil-picture" src="{{imgSrc}}{{profilImg}}">
+
+  </div>
+  <div id="body">
+    <div class="body-title">
+      <h2> Projets réalisé : </h2>
+    </div>
+    <div class="project" *ngFor="let project of this.projects">
+      <div class="project-title">
+        {{project.title}}
+      </div>
+      <div class="project-picture-div">
+        <button mat-button class="button" (click)="changeImg(false, project.images.length)">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow]}}">
+
+        <button mat-button class="button" (click)="changeImg(true, project.images.length)">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+      <div class="project-footer">
+        <mat-card class="project-description">
+          <mat-card-content>
+            <h4> Description du projet :</h4>
+            <p *ngFor="let ligne of project.description">
+              {{ligne}}
+              <br/>
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="project-technologie">
+          <mat-card-content>
+            <h4> Technologies :</h4>
+            <ng-container *ngFor="let tech of project.technologies">
+              {{tech+", "}}
+            </ng-container>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="body-title">
+      <h2> Education : </h2>
+    </div>
+    <div class="education" *ngFor="let education of educations">
+
+    </div>
+  </div>
+  <div id="footer">
+
+  </div>
+</div>
