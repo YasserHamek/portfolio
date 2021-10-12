@@ -94,9 +94,103 @@
         }
       }
     }
+
+    .education {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .education-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .education-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          .university-logo {
+            width: 30%;
+            height: auto;
+          }
+
+          .diplome-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .diplome-title {
+              font-size: larger;
+            }
+          }
+        }
+
+        .education-description {
+          background-color: rgba(192, 189, 189, 0.555);
+          font-size: 1rem;
+          text-align: justify;
+          color: black;
+          margin-left: 0.1rem;
+          margin-right: 0.1rem;
+          border-radius: 10px;
+
+          .edu-des-line {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
   }
 
   #footer {
 
+
+    #footer-title {
+
+    }
+
+    #footer-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      #footer-card {
+        width: 90%;
+        background-color: rgba(192, 189, 189, 0.555);
+        font-size: 1rem;
+        color: black;
+        border-radius: 10px;
+
+        #footer-content {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+
+          .tech {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .tech-logo {
+              width: 40px;
+              height: auto;
+            }
+
+            .tech-name {
+
+            }
+          }
+        }
+      }
+    }
   }
 }

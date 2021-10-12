@@ -55,11 +55,40 @@
     <div class="body-title">
       <h2> Education : </h2>
     </div>
-    <div class="education" *ngFor="let education of educations">
-
+    <div class="education">
+      <div class="education-content" *ngFor="let education of educations">
+        <div class="education-header">
+          <img class="university-logo" src="{{logoImgSrc}}{{education.universityLogo}}">
+          <div class="diplome-description">
+            <div class="diplome-title"><b>{{education.diplome}}</b></div>
+            <div>{{education.university}}</div>
+            <div>{{education.year}}</div>
+          </div>
+        </div>
+        <mat-card class="education-description">
+          <mat-card-content>
+            <p> {{education.descriptions[0]}} </p>
+            <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
+              {{ligne}}
+            </li>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
   <div id="footer">
-
+    <div id="footer-title">
+      <h2> Technologies : </h2>
+    </div>
+    <div id="footer-body">
+      <mat-card id="footer-card">
+        <mat-card-content id="footer-content">
+          <div class="tech" *ngFor="let tech of techs">
+            <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
+            <div class="tech-name"> {{tech.name}} </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>
