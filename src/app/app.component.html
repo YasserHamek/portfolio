@@ -22,13 +22,12 @@
       <div class="project-title">
         {{project.title}}
       </div>
-      <div class="project-picture-div">
-        <button mat-button class="button" (click)="changeImg(false, project.images.length)">
+      <div class="project-picture-div" *ngIf="project.images">
+        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length)">
           <mat-icon>chevron_left</mat-icon>
         </button>
         <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow]}}">
-
-        <button mat-button class="button" (click)="changeImg(true, project.images.length)">
+        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(true, project.images.length)">
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>
@@ -45,8 +44,13 @@
         <mat-card class="project-technologie">
           <mat-card-content>
             <h4> Technologies :</h4>
-            <ng-container *ngFor="let tech of project.technologies">
-              {{tech+", "}}
+            <ng-container *ngFor="let tech of project.technologies; let i=index">
+              <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
+                {{tech+"."}}
+              </ng-container>
+              <ng-template #elseTemplate>
+                {{tech+", "}}
+              </ng-template>
             </ng-container>
           </mat-card-content>
         </mat-card>
@@ -65,9 +69,9 @@
             <div>{{education.year}}</div>
           </div>
         </div>
-        <mat-card class="education-description">
+        <mat-card class="education-description" *ngIf="education.descriptions">
           <mat-card-content>
-            <p> {{education.descriptions[0]}} </p>
+            <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
             <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
               {{ligne}}
             </li>
@@ -76,19 +80,33 @@
       </div>
     </div>
   </div>
-  <div id="footer">
-    <div id="footer-title">
+  <div id="tech">
+    <div id="tech-title">
       <h2> Technologies : </h2>
     </div>
-    <div id="footer-body">
-      <mat-card id="footer-card">
-        <mat-card-content id="footer-content">
-          <div class="tech" *ngFor="let tech of techs">
+    <div id="tech-body">
+      <mat-card id="tech-card">
+        <mat-card-content id="tech-content">
+          <div class="tech-field" *ngFor="let tech of techs">
             <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
             <div class="tech-name"> {{tech.name}} </div>
           </div>
         </mat-card-content>
       </mat-card>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="logo">
+      <a id="github" href="https://github.com/YasserHamek">
+        <i class="fa fa-linkedin fa-inverse fa-2x"></i>
+      </a>
+      <a id="linkedin" href="https://www.linkedin.com/in/yasser-hamek/">
+        <i class="fa fa-github fa-inverse fa-2x"></i>
+      </a>
+    </div>
+    <hr/>
+    <div id="developper">
+      © 2021 - developed by Yasser Hamek
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 3rem;
 
   #header {
     display: flex;
@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1rem;
+    //background: linear-gradient(180deg, rgba(105, 99, 212, 0.685) 0%, rgba(105, 99, 212, 0.295) 35%, rgb(255, 255, 255) 100%);
 
     #about-me {
       display: flex;
@@ -105,7 +106,7 @@
       .education-content {
         display: flex;
         flex-direction: column;
-        max-width: 600px;
+        max-width: 550px;
         margin-left: auto;
         margin-right: auto;
 
@@ -147,42 +148,43 @@
     }
   }
 
-  #footer {
+  #tech {
+    margin-bottom: 20px;
 
-
-    #footer-title {
+    #tech-title {
 
     }
 
-    #footer-body {
+    #tech-body {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      #footer-card {
+      #tech-card {
         width: 90%;
         background-color: rgba(192, 189, 189, 0.555);
         font-size: 1rem;
         color: black;
         border-radius: 10px;
 
-        #footer-content {
+        #tech-content {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: center;
           gap: 1rem;
 
-          .tech {
+          .tech-field {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+            gap: 0.5rem;
 
             .tech-logo {
-              width: 40px;
-              height: auto;
+              width: auto;
+              height: 50px;
             }
 
             .tech-name {
@@ -191,6 +193,46 @@
           }
         }
       }
+    }
+  }
+
+  #footer {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    margin-left: -56px;
+    margin-right: -56px;
+    margin-bottom: -56px;
+    background-color: rgb(39, 33, 33);
+
+    #logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+
+      #github {
+        margin-top: 1rem;
+      }
+
+      #linkedin {
+        margin-top: 1rem;
+      }
+    }
+
+    hr {
+      margin: 1rem auto;
+      border: 0;
+      width: 50%;
+      border-top: 2px solid grey;
+    }
+
+    #developper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.877);
+
     }
   }
 }
