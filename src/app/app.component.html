@@ -23,14 +23,14 @@
     </div>
   </div>
   <div id="body">
-    <div class="body-title"[ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+    <div class="body-title"[ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1> Projets réalisé : </h1>
     </div>
     <div class="project" *ngFor="let project of this.projects">
-      <div class="project-title" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+      <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
         {{project.title}}
       </div>
-      <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+      <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
         <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length)">
           <mat-icon>chevron_left</mat-icon>
         </button>
@@ -40,14 +40,14 @@
         </button>
       </div>
       <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
-        <div class="project-description" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+        <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <h4> Description du projet :</h4>
           <p *ngFor="let ligne of project.description">
             {{ligne}}
             <br/>
           </p>
         </div>
-        <mat-card class="project-technologie" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+        <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <mat-card-content>
             <h4> Technologies :</h4>
             <ng-container *ngFor="let tech of project.technologies; let i=index">
@@ -63,14 +63,14 @@
       </div>
       <ng-template #footerCat2>
         <div class="project-footer cat2">
-          <div class="project-description" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+          <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
             <h4> Description du projet :</h4>
             <p *ngFor="let ligne of project.description">
               {{ligne}}
               <br/>
             </p>
           </div>
-          <mat-card class="project-technologie" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+          <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
             <mat-card-content>
               <h4> Technologies :</h4>
               <ng-container *ngFor="let tech of project.technologies; let i=index">
@@ -86,11 +86,11 @@
         </div>
       </ng-template>
     </div>
-    <div class="body-title" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+    <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1> Education : </h1>
     </div>
     <div class="education">
-      <div class="education-content" *ngFor="let education of educations" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}" >
+      <div class="education-content" *ngFor="let education of educations" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}" >
         <div class="education-header">
           <img class="university-logo" src="{{logoImgSrc}}{{education.universityLogo}}">
           <div class="diplome-description">
@@ -107,15 +107,15 @@
         </div>
       </div>
     </div>
-    <div class="body-title" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+    <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1> Technologies : </h1>
     </div>
     <div id="tech">
       <div id="tech-body">
-        <mat-card id="tech-card" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+        <mat-card id="tech-card" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <mat-card-content id="tech-content">
             <div class="tech-field" *ngFor="let tech of techs">
-              <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}" [ngsReveal]="{reset: true,duration:4000 }">
+              <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}" [ngsReveal]="{delay:600, duration: 2000 }">
               <div class="tech-name"> {{tech.name}} </div>
             </div>
           </mat-card-content>
