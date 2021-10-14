@@ -35,7 +35,7 @@
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/scrollreveal/dist/scrollreveal.js"]
           },
           "configurations": {
             "production": {

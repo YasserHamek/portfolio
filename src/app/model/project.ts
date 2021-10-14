@@ -3,6 +3,7 @@ export class Project {
   images: string[];
   description: string[];
   technologies: string[];
+  cat: string;
 
   constructor(init? : Partial<Project>){
     Object.assign(this, init);

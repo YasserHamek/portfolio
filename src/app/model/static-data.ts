@@ -16,13 +16,15 @@ export class StaticData {
     "de plusieurs pages notamment pour la création et la recherche d’utilisateurs, recherche et affichage des planches ainsi que la réalisation de l’opération de la RAT. Pour ces pages, j’ai utilisé plusieurs technologies en frontend, notamment la librairie RxJS pour effectuer les appelles http asynchrones et le tableau d’Angular Material qui permet d’ajouter facilement la pagination et le tri des données. En backend j’ai utilisé Spring Data JPA pour la communication avec la base de données et pour l’extraction de données sous format de page. Le développement de NaviExploit s’est fait en respectant les normes de développement orientées objet notamment les principes SOLID, DRY et DDD."],
     technologies: ["Java 8/11", "JavaScript", "Typescript", "HTML", "SCSS", "Spring", "Spring Boot", "Spring Data JPA",
     "Spring Sécurity", "Hibernate", "SQL", "Angular Material", "JWT", "RxJS", "FlexLayout", "SVN", "Maven", "REST",
-    "Spring WebTestClient", "Spring MockMvc", "Eclipse", "Visual Studio Code"]
+    "Spring WebTestClient", "Spring MockMvc", "Eclipse", "Visual Studio Code"],
+    cat: "cat1"
   },{
     title: "Cafeteria Online",
     images: ["Cafeteria-online-1.PNG", "Cafeteria-online-2.PNG", "Cafeteria-online-3.PNG", "Cafeteria-online-4.PNG"],
     description: [" l’API RESTFul de la cafeteria online expose des end points pour la manipulation des données, j’ai créé 3 Controller, un Controller pour les utilisateurs, un Controller pour les produits et un Controller pour les paniers, chaque Controller expose les méthode CRUD classique d’une API REST notamment POST, GET, PUT, DELETE, pour chaque méthode on peut l’utiliser soit avec un identifiant ou sans identifiant, si on utilise un id ça sera pour un seul Object, par contre si on l’utilise sans id, ça sera alors pour un ensemble d’objet"],
     technologies: ["Java 8", "Spring", "Spring Boot", "Spring Data JPA", "Git", "Maven", "Swagger",
-    "REST", "Eclipse"]
+    "REST", "Eclipse"],
+    cat: "cat2"
   },{
     title: "Tableau Kanban",
     images: ["Kanban.jpg"],
@@ -31,16 +33,19 @@ export class StaticData {
     "on peut ajouter ou supprimer un item et on peut aussi changer le statut d’un item ce qui vas générer "+
     "le déplacement de l’item d’une colonne à une autre."],
     technologies: ["Java 8", "JavaScript", "Typescript", "HTML", "SCSS", "Spring","Spring Boot", "Spring Data JPA",
-    "Angular Material", "FlexBox", "Git", "Maven", "REST", "Eclipse", "Visual Studio Code"]
+    "Angular Material", "FlexBox", "Git", "Maven", "REST", "Eclipse", "Visual Studio Code"],
+    cat: "cat2"
   },new Project({
     title: "Justificateur de text",
     description: ["Cette application est une API REST qui fournis deux end point, le premier permet de justifier un texte introduis dans les paramètres et le second permet de générer des JWT Token."],
-    technologies: ["NodeJS", "ExpressJS", "JWT", "Git","REST", "Visual Studio Code"]
+    technologies: ["NodeJS", "ExpressJS", "JWT", "Git","REST", "Visual Studio Code"],
+    cat: "cat2"
   }),{
     title: "Javascript Chart",
     images: ["Vanilla-javascript-chart.PNG","Vanilla-javascript-chart2.PNG"],
     description: ["Dans ce projet, j'ai développé une charte graphique avec Vanilla Javascript, la charte affiche le score des joueurs à travers le temps, si on appuie une fois sur la barre, on aura le score qui s'affiche au-dessus de la barre, et si on appuie pour la 2e fois le score disparait."],
-    technologies: ["JavaScript","HTML", "CSS", "FlexBox", "Visual Studio Code"]
+    technologies: ["JavaScript","HTML", "CSS", "FlexBox", "Visual Studio Code"],
+    cat: "cat2"
   }]
 
   //education
@@ -68,7 +73,7 @@ export class StaticData {
       university: "Universit de Rennes 1",
       year: "2019 - 2020",
       descriptions: [
-        " ",
+        "Parcours compétences complémentaires dans les services du numérique.",
         "Algorithmique",
         "Programmation orienté objet : Java",
         "Systèmes d'information (Merise, UML, méthode Agile),",

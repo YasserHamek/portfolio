@@ -1,22 +1,30 @@
 <div id="container">
-  <div id="header">
-    <div id="about-me">
-      <h1>About me</h1>
-      <mat-card id="presentation">
-        <mat-card-content>
-          <p>
-            Je m’appelle Yasser Hamek, j’ai 28ans j’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
-            et j’ai récemment été diplômé de l’université de Rennes 1 avec un Master en Informatique.
-          </p>
-        </mat-card-content>
-      </mat-card>
+  <div id="welcome" ngsReveal>
+    <h1 id="welcome-title">
+      Hi, my name is <span id="my-name">Yasser Hamek</span>
+      <br />
+      I'm Fullstack Developer.
+    </h1>
+    <div>
+      <a class="custom-button" href="#header">Know more</a>
     </div>
-    <img id="profil-picture" src="{{imgSrc}}{{profilImg}}">
-
+  </div>
+  <div id="header" ngsReveal>
+    <h1>About me</h1>
+    <div id="presentation">
+      <img id="profil-picture" src="{{imgSrc}}{{profilImg}}">
+      <div id="presentation-text">
+        Je m’appelle Yasser Hamek, j’ai 28ans et j’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
+        et j’ai récemment été diplômé de l’université de Rennes 1 avec un Master en Informatique.
+      <br/>
+        Avec un esprit d'ingénieur très développé, et un grand intérêt pour la conception et le développement de logiciels,
+        je suis à la recherche d'un poste en développement web Fullstack sur Java, Spring et Angular.
+      </div>
+    </div>
   </div>
   <div id="body">
     <div class="body-title">
-      <h2> Projets réalisé : </h2>
+      <h1> Projets réalisé : </h1>
     </div>
     <div class="project" *ngFor="let project of this.projects">
       <div class="project-title">
@@ -31,16 +39,14 @@
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>
-      <div class="project-footer">
-        <mat-card class="project-description">
-          <mat-card-content>
-            <h4> Description du projet :</h4>
-            <p *ngFor="let ligne of project.description">
-              {{ligne}}
-              <br/>
-            </p>
-          </mat-card-content>
-        </mat-card>
+      <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
+        <div class="project-description">
+          <h4> Description du projet :</h4>
+          <p *ngFor="let ligne of project.description">
+            {{ligne}}
+            <br/>
+          </p>
+        </div>
         <mat-card class="project-technologie">
           <mat-card-content>
             <h4> Technologies :</h4>
@@ -55,9 +61,33 @@
           </mat-card-content>
         </mat-card>
       </div>
+      <ng-template #footerCat2>
+        <div class="project-footer cat2">
+          <div class="project-description">
+            <h4> Description du projet :</h4>
+            <p *ngFor="let ligne of project.description">
+              {{ligne}}
+              <br/>
+            </p>
+          </div>
+          <mat-card class="project-technologie">
+            <mat-card-content>
+              <h4> Technologies :</h4>
+              <ng-container *ngFor="let tech of project.technologies; let i=index">
+                <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
+                  {{tech+"."}}
+                </ng-container>
+                <ng-template #elseTemplate>
+                  {{tech+", "}}
+                </ng-template>
+              </ng-container>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </ng-template>
     </div>
     <div class="body-title">
-      <h2> Education : </h2>
+      <h1> Education : </h1>
     </div>
     <div class="education">
       <div class="education-content" *ngFor="let education of educations">
@@ -69,30 +99,28 @@
             <div>{{education.year}}</div>
           </div>
         </div>
-        <mat-card class="education-description" *ngIf="education.descriptions">
-          <mat-card-content>
-            <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
-            <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
-              {{ligne}}
-            </li>
+        <div class="education-description" *ngIf="education.descriptions">
+          <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
+          <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
+            {{ligne}}
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="body-title">
+      <h1> Technologies : </h1>
+    </div>
+    <div id="tech">
+      <div id="tech-body">
+        <mat-card id="tech-card">
+          <mat-card-content id="tech-content">
+            <div class="tech-field" *ngFor="let tech of techs">
+              <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
+              <div class="tech-name"> {{tech.name}} </div>
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
-    </div>
-  </div>
-  <div id="tech">
-    <div id="tech-title">
-      <h2> Technologies : </h2>
-    </div>
-    <div id="tech-body">
-      <mat-card id="tech-card">
-        <mat-card-content id="tech-content">
-          <div class="tech-field" *ngFor="let tech of techs">
-            <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
-            <div class="tech-name"> {{tech.name}} </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
     </div>
   </div>
   <div id="footer">

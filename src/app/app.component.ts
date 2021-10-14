@@ -3,11 +3,13 @@ import { Education } from './model/education';
 import { Project } from './model/project';
 import { StaticData } from './model/static-data';
 import { Tech } from './model/tech';
+import { NgsRevealConfig } from 'ngx-scrollreveal';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [NgsRevealConfig]
 })
 export class AppComponent implements OnInit {
   title: string = 'portfolio';
@@ -19,8 +21,13 @@ export class AppComponent implements OnInit {
   profilImg: string = "profil-picture.jpg";
   indexOfImageToShow: number = 0;
 
-  ngOnInit(): void {
+  constructor(config: NgsRevealConfig){
+    config.easing = "cubic-bezier(0.5, 0, 0, 1)";
+    config.distance = "30px";
+    config.duration = 1000;
+  }
 
+  ngOnInit(): void {
     //filling project
     this.projects.push(...StaticData.projects);
 

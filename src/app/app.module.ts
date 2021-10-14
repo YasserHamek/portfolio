@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NgsRevealModule } from 'ngx-scrollreveal';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    NgsRevealModule,
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
