@@ -20,14 +20,14 @@ export class StaticData {
     cat: "cat1"
   },{
     title: "Cafeteria Online",
-    images: ["Cafeteria-online-1.PNG", "Cafeteria-online-2.PNG", "Cafeteria-online-3.PNG", "Cafeteria-online-4.PNG"],
+    images: ["Cafeteria-online-1.png", "Cafeteria-online-2.png", "Cafeteria-online-3.png", "Cafeteria-online-4.png"],
     description: [" l’API RESTFul de la cafeteria online expose des end points pour la manipulation des données, j’ai créé 3 Controller, un Controller pour les utilisateurs, un Controller pour les produits et un Controller pour les paniers, chaque Controller expose les méthode CRUD classique d’une API REST notamment POST, GET, PUT, DELETE, pour chaque méthode on peut l’utiliser soit avec un identifiant ou sans identifiant, si on utilise un id ça sera pour un seul Object, par contre si on l’utilise sans id, ça sera alors pour un ensemble d’objet"],
     technologies: ["Java 8", "Spring", "Spring Boot", "Spring Data JPA", "Git", "Maven", "Swagger",
     "REST", "Eclipse"],
     cat: "cat2"
   },{
     title: "Tableau Kanban",
-    images: ["Kanban.jpg"],
+    images: ["Kanban.png"],
     description: ["L’application c’est un tableau kanban simple, qui contient 3 colonnes, une colonne de statue en attente, "+
     "une de statue en cours et une de statue terminer, chaque colonne regroupe un ensemble d’items, "+
     "on peut ajouter ou supprimer un item et on peut aussi changer le statut d’un item ce qui vas générer "+
@@ -42,7 +42,7 @@ export class StaticData {
     cat: "cat2"
   }),{
     title: "Javascript Chart",
-    images: ["Vanilla-javascript-chart.PNG","Vanilla-javascript-chart2.PNG"],
+    images: ["Vanilla-javascript-chart.png","Vanilla-javascript-chart2.png"],
     description: ["Dans ce projet, j'ai développé une charte graphique avec Vanilla Javascript, la charte affiche le score des joueurs à travers le temps, si on appuie une fois sur la barre, on aura le score qui s'affiche au-dessus de la barre, et si on appuie pour la 2e fois le score disparait."],
     technologies: ["JavaScript","HTML", "CSS", "FlexBox", "Visual Studio Code"],
     cat: "cat2"

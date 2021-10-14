@@ -26,16 +26,16 @@
     <div class="body-title"[ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1> Projets réalisé : </h1>
     </div>
-    <div class="project" *ngFor="let project of this.projects">
+    <div class="project" *ngFor="let project of this.projects; let projectIndex = index">
       <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
         {{project.title}}
       </div>
       <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length)">
+        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length, projectIndex)">
           <mat-icon>chevron_left</mat-icon>
         </button>
-        <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow]}}">
-        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(true, project.images.length)">
+        <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow[projectIndex]]}}">
+        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(true, project.images.length, projectIndex)">
           <mat-icon>chevron_right</mat-icon>
         </button>
       </div>

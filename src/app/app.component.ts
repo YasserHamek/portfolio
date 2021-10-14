@@ -19,13 +19,16 @@ export class AppComponent implements OnInit {
   imgSrc = "assets/img/";
   logoImgSrc = "assets/img/logo/";
   profilImg: string = "profil-picture.jpg";
-  indexOfImageToShow: number = 0;
+  indexOfImageToShow: number[] = [];
 
   ngOnInit(): void {
-
-
     //filling project
     this.projects.push(...StaticData.projects);
+
+    //filling image index
+    for(let i = 0; i< this.projects.length; i++){
+      this.indexOfImageToShow.push(0);
+    }
 
     //filling education
     this.educations.push(...StaticData.educations);
@@ -34,11 +37,11 @@ export class AppComponent implements OnInit {
     this.techs.push(...StaticData.techs);
   }
 
-  changeImg(isToMoveRight: boolean, imgArrLength: number): void{
+  changeImg(isToMoveRight: boolean, imgArrLength: number, indexOfProject: number): void{
     if(isToMoveRight){
-      this.indexOfImageToShow = (this.indexOfImageToShow + 1) % imgArrLength
+      this.indexOfImageToShow[indexOfProject] = (this.indexOfImageToShow[indexOfProject] + 1) % imgArrLength
     } else if (!isToMoveRight){
-      this.indexOfImageToShow = this.indexOfImageToShow == 0 ? imgArrLength - 1 : this.indexOfImageToShow - 1 ;
+      this.indexOfImageToShow[indexOfProject] = this.indexOfImageToShow[indexOfProject] == 0 ? imgArrLength - 1 : this.indexOfImageToShow[indexOfProject] - 1 ;
     }
   }
 }
