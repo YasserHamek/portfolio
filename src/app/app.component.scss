@@ -78,11 +78,11 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1.5rem;
-    height: 80vh;
+    min-height: 80vh;
     margin-left: -56px;
     margin-right: -56px;
     padding: 56px;
-    padding-top: 10px;
+    padding-top: 35px;
     font-size: 1.5rem;
     color: white;
     background-color: #00cdac;
@@ -93,8 +93,7 @@
       #00cdac 100%
     );
     border-top: 0px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
     padding-bottom: 10%;
 
     #presentation {
@@ -136,8 +135,7 @@
       flex-direction: row;
       justify-content: flex-start;
       font-size: 1.3rem;
-      margin-left: -56px;
-      margin-right: -56px;
+      margin-left: -45px;
 
       h1 {
         padding: 0px;
@@ -153,6 +151,7 @@
 
       .project-title{
         font-size: 1.5rem;
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,.9), 0 1px 1px 0 rgba(0,0,0,.23), 0 1px 3px 0 rgba(0,0,0,.20);
         background-image: linear-gradient(
           135deg,
           #02aab0 0%,
@@ -192,18 +191,19 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
         align-items: center;
         margin: 0px -56px 0px -56px;
         padding: 1rem;
         padding-top: 0px;
         background: linear-gradient(45deg, rgba(255,255,255,1) 12%, rgba(221,221,221,1) 41%, rgba(221,221,221,1) 50%, rgba(255,255,255,1) 88%);
+
         .project-description {
           font-size: 1rem;
           text-align: justify;
           color: black;
           margin-left: 3rem;
           margin-right: 3rem;
-
         }
 
         .project-technologie {
@@ -306,8 +306,6 @@
 
         #tech-card {
           width: 90%;
-          //background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(67,190,250,1) 48%, rgba(255,255,255,1) 100%);
-          //background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(33,159,177,1) 48%, rgba(255,255,255,1) 100%);
           background: linear-gradient(45deg, rgba(255,255,255,1) 12%, rgba(221,221,221,1) 41%, rgba(221,221,221,1) 50%, rgba(255,255,255,1) 88%);
           font-size: 1rem;
           color: black;
