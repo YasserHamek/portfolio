@@ -5,7 +5,6 @@
     "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node server.js",
-    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -37,7 +36,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.9",
+    "@angular-devkit/build-angular": "^12.2.10",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
