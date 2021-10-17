@@ -112,7 +112,7 @@
     </div>
     <div id="tech">
       <div id="tech-body">
-        <mat-card id="tech-card" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000, delay:600 }">
+        <mat-card id="tech-card" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <mat-card-content id="tech-content">
             <div class="tech-field" *ngFor="let tech of techs" [ngsReveal]="{reset: true, delay:600, duration: 2000, interval:50 }">
               <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
