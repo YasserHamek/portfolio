@@ -167,6 +167,9 @@ export class StaticData {
       logo: "Heroku.png",
       name: "Heroku"
     },{
+      logo: "Postman.png",
+      name: "Postman"
+    },{
       logo: "UML.png",
       name: "UML"
     },{
