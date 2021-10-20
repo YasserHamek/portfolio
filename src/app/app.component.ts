@@ -35,6 +35,15 @@ export class AppComponent implements OnInit {
 
     //filling tech
     this.techs.push(...StaticData.techs);
+
+    /*
+    var win = window,
+    doc = document,
+    docElem = doc.documentElement,
+    body = doc.getElementsByTagName('body')[0],
+    x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+    y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+    alert(x + ' × ' + y);*/
   }
 
   changeImg(isToMoveRight: boolean, imgArrLength: number, indexOfProject: number): void{

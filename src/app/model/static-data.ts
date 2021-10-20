@@ -51,7 +51,7 @@ export class StaticData {
   //education
   public static educations: Education[] = [
     {
-      universityLogo: "Logo_Université_Rennes_1_.svg",
+      universityLogo: "Logo_Université_Rennes_1_.png",
       diplome: "Master 2 Informatique",
       university: "Universit de Rennes 1",
       year: "2020 - 2021",
@@ -68,7 +68,7 @@ export class StaticData {
         "Modélisation, animation, rendu 3D (Unity)"
       ]
     },{
-      universityLogo: "Logo_Université_Rennes_1_.svg",
+      universityLogo: "Logo_Université_Rennes_1_.png",
       diplome: "Master 1 Informatique",
       university: "Universit de Rennes 1",
       year: "2019 - 2020",
@@ -86,7 +86,7 @@ export class StaticData {
         "Conception d'architectures à Objets et services (API REST)"
       ]
     },new Education({
-      universityLogo: "University_of_Lille.svg",
+      universityLogo: "University_of_Lille.png",
       diplome: "Master 1 Génie Mécanique",
       university: "Universit de Lille",
       year: "2017 - 2018"

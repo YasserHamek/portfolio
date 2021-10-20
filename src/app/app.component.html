@@ -2,7 +2,7 @@
   <div id="welcome" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
     <h1 id="welcome-title">
       Hi, mon nom est <span id="my-name">Yasser Hamek</span>
-      <br />
+      <br id="br"/>
       <div [ngsReveal]="{duration: 3000}">Je suis un développeur Fullstack.</div>
     </h1>
     <div [ngsReveal]="{duration: 4000 }">
@@ -24,7 +24,7 @@
   </div>
   <div id="body">
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-      <h1> Projets réalisé : </h1>
+      <h1>Projets réalisé</h1>
     </div>
     <div class="project" *ngFor="let project of this.projects; let projectIndex = index">
       <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
@@ -41,7 +41,7 @@
       </div>
       <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
         <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-          <h4> Description du projet :</h4>
+          <h4 class="project-footer-title">Description du projet</h4>
           <p *ngFor="let ligne of project.description">
             {{ligne}}
             <br/>
@@ -49,7 +49,7 @@
         </div>
         <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <mat-card-content>
-            <h4> Technologies :</h4>
+            <h4 class="project-footer-title">Technologies</h4>
             <ng-container *ngFor="let tech of project.technologies; let i=index">
               <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
                 {{tech+"."}}
@@ -64,7 +64,7 @@
       <ng-template #footerCat2>
         <div class="project-footer cat2">
           <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-            <h4> Description du projet :</h4>
+            <h4 class="project-footer-title">Description du projet</h4>
             <p *ngFor="let ligne of project.description">
               {{ligne}}
               <br/>
@@ -72,7 +72,7 @@
           </div>
           <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
             <mat-card-content>
-              <h4> Technologies :</h4>
+              <h4 class="project-footer-title">Technologies</h4>
               <ng-container *ngFor="let tech of project.technologies; let i=index">
                 <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
                   {{tech+"."}}
@@ -87,7 +87,7 @@
       </ng-template>
     </div>
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-      <h1> Education : </h1>
+      <h1>Education</h1>
     </div>
     <div class="education">
       <div class="education-content" *ngFor="let education of educations" [ngsReveal]="{ easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}" >
@@ -108,7 +108,7 @@
       </div>
     </div>
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-      <h1> Technologies : </h1>
+      <h1>Technologies</h1>
     </div>
     <div id="tech">
       <div id="tech-body">
