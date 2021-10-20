@@ -245,6 +245,7 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+          align-items: center;
           width: 70%;
           gap: 0.75rem;
           box-shadow: 0 2px 1px -1px rgba(0,0,0,.9), 0 1px 1px 0 rgba(0,0,0,.23), 0 1px 3px 0 rgba(0,0,0,.20);
@@ -435,75 +436,26 @@
       }
 
       .education {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.75rem;
         margin: 0px -56px 0px -56px;
 
         .education-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-          max-width: 550px;
-          margin-left: auto;
-          margin-right: auto;
+          gap: 0.75rem;
 
           .education-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 70%;
-            gap: 0.75rem;
-            box-shadow: 0 2px 1px -1px rgba(0,0,0,.9), 0 1px 1px 0 rgba(0,0,0,.23), 0 1px 3px 0 rgba(0,0,0,.20);
-            background-image: linear-gradient(
-              135deg,
-              #02aab0 0%,
-              #00cdac 75%,
-              #00cdac 100%
-            );
-            padding: 0.2rem 0.45rem 0.2rem 0.45rem;
-            color: white;
-            border-radius: 7.5px;
+            width: 92%;
+            gap: 0.5rem;
 
             .university-logo {
-              width: 30%;
-              height: auto;
-            }
-
-            .diplome-description {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-
-              .diplome-title {
-                font-size: larger;
-              }
-            }
-          }
-
-          .education-description {
-            background: linear-gradient(45deg, rgba(255,255,255,1) 12%, rgba(221,221,221,1) 41%, rgba(221,221,221,1) 50%, rgba(255,255,255,1) 88%);
-            font-size: 1rem;
-            text-align: justify;
-            color: black;
-            margin-left: 0.1rem;
-            margin-right: 0.1rem;
-            border-radius: 10px;
-            padding: 1rem;
-            padding-top: 0.25rem;
-
-            .edu-des-line {
-              margin-left: 2rem;
+              height: 90%;
             }
           }
         }
       }
 
       #tech {
-        margin-bottom: 20px;
+        margin: 0px -56px 0px -56px;
+        margin-bottom: 10px;
 
         #tech-body {
           display: flex;
@@ -513,32 +465,21 @@
 
           #tech-card {
             width: 90%;
-            background: linear-gradient(45deg, rgba(255,255,255,1) 12%, rgba(221,221,221,1) 41%, rgba(221,221,221,1) 50%, rgba(255,255,255,1) 88%);
-            font-size: 1rem;
-            color: black;
-            border-radius: 10px;
+            padding: 8px;
 
             #tech-content {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
-              justify-content: center;
-              gap: 1rem;
+              gap: 0.5rem;
 
               .tech-field {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 0.5rem;
+                gap: 0.25rem;
 
                 .tech-logo {
                   width: auto;
-                  height: 50px;
+                  height: 35px;
                 }
 
                 .tech-name {
-
+                  font-size: 0.75rem;
                 }
               }
             }
@@ -550,7 +491,7 @@
     #footer {
       display: flex;
       flex-direction: column;
-      height: 120px;
+      height: 80px;
       margin-left: -56px;
       margin-right: -56px;
       margin-bottom: -56px;
@@ -563,16 +504,16 @@
         gap: 3rem;
 
         #github {
-          margin-top: 1rem;
+          margin-top: 0.3rem;
         }
 
         #linkedin {
-          margin-top: 1rem;
+          margin-top: 0.3rem;
         }
       }
 
       hr {
-        margin: 1rem auto;
+        margin: 0.3rem auto;
         border: 0;
         width: 50%;
         border-top: 2px solid grey;
