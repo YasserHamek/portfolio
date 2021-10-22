@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Education } from './model/education';
 import { Project } from './model/project';
 import { StaticData } from './model/static-data';
 import { Tech } from './model/tech';
 import { NgsRevealConfig } from 'ngx-scrollreveal';
+import { BehaviorSubject, ReplaySubject, Subscription} from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,39 +13,63 @@ import { NgsRevealConfig } from 'ngx-scrollreveal';
   styleUrls: ['./app.component.scss'],
   providers: [NgsRevealConfig]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title: string = 'portfolio';
-  projects: Project[] = [];
-  educations: Education[] = [];
-  techs: Tech[] = [];
+
+  projects: ReplaySubject<Project[]> = new ReplaySubject(1);
+  loadingProjects: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
+  educations: ReplaySubject<Education[]> = new ReplaySubject(1);
+  loadingEducations: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
+  techs: ReplaySubject<Tech[]> = new ReplaySubject(1);
+  loadingTechs: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
+  subscription: Subscription = new Subscription();
+
   imgSrc = "assets/img/";
   logoImgSrc = "assets/img/logo/";
   profilImg: string = "profil-picture.jpg";
   indexOfImageToShow: number[] = [];
 
   ngOnInit(): void {
-    //filling project
-    this.projects.push(...StaticData.projects);
 
-    //filling image index
-    for(let i = 0; i< this.projects.length; i++){
-      this.indexOfImageToShow.push(0);
-    }
+    //filling project
+    this.projects.next(StaticData.projects);
 
     //filling education
-    this.educations.push(...StaticData.educations);
+    this.educations.next(StaticData.educations);
 
     //filling tech
-    this.techs.push(...StaticData.techs);
+    this.techs.next(StaticData.techs);
 
-    /*
-    var win = window,
-    doc = document,
-    docElem = doc.documentElement,
-    body = doc.getElementsByTagName('body')[0],
-    x = win.innerWidth || docElem.clientWidth || body.clientWidth,
-    y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
-    alert(x + ' × ' + y);*/
+    this.subscription.add(
+      this.projects.pipe(
+        tap((projects) => {
+          //filling image index
+          for(let i = 0; i< projects.length; i++){
+            this.indexOfImageToShow.push(0);
+          }
+        }),
+        tap(() => this.loadingProjects.next(false)),
+      ).subscribe(),
+    )
+
+    this.subscription.add(
+      this.educations.pipe(
+        tap(() => this.loadingEducations.next(false)),
+      ).subscribe()
+    )
+
+    this.subscription.add(
+      this.techs.pipe(
+        tap(() => this.loadingTechs.next(false)),
+      ).subscribe()
+    )
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   changeImg(isToMoveRight: boolean, imgArrLength: number, indexOfProject: number): void{
@@ -54,3 +80,4 @@ export class AppComponent implements OnInit {
     }
   }
 }
+

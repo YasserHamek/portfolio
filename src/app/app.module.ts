@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgsRevealModule } from 'ngx-scrollreveal';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     MatIconModule,
     NgsRevealModule,
     NgxPageScrollCoreModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

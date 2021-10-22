@@ -26,43 +26,24 @@
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Projets réalisé</h1>
     </div>
-    <div class="project" *ngFor="let project of this.projects; let projectIndex = index">
-      <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-        {{project.title}}
-      </div>
-      <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length, projectIndex)">
-          <mat-icon>chevron_left</mat-icon>
-        </button>
-        <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow[projectIndex]]}}">
-        <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(true, project.images.length, projectIndex)">
-          <mat-icon>chevron_right</mat-icon>
-        </button>
-      </div>
-      <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
-        <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-          <h4 class="project-footer-title">Description du projet</h4>
-          <p *ngFor="let ligne of project.description">
-            {{ligne}}
-            <br/>
-          </p>
+    <div class="spinner-div" *ngIf="loadingProjects | async; else projectsTemplate">
+      <mat-spinner> </mat-spinner>
+    </div>
+    <ng-template #projectsTemplate>
+      <div class="project" *ngFor="let project of this.projects | async; let projectIndex = index">
+        <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+          {{project.title}}
         </div>
-        <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-          <mat-card-content>
-            <h4 class="project-footer-title">Technologies</h4>
-            <ng-container *ngFor="let tech of project.technologies; let i=index">
-              <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
-                {{tech+"."}}
-              </ng-container>
-              <ng-template #elseTemplate>
-                {{tech+", "}}
-              </ng-template>
-            </ng-container>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <ng-template #footerCat2>
-        <div class="project-footer cat2">
+        <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+          <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length, projectIndex)">
+            <mat-icon>chevron_left</mat-icon>
+          </button>
+          <img class="project-picture" src="{{imgSrc}}{{project.images[indexOfImageToShow[projectIndex]]}}">
+          <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(true, project.images.length, projectIndex)">
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+        </div>
+        <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
           <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
             <h4 class="project-footer-title">Description du projet</h4>
             <p *ngFor="let ligne of project.description">
@@ -84,44 +65,78 @@
             </mat-card-content>
           </mat-card>
         </div>
-      </ng-template>
-    </div>
+        <ng-template #footerCat2>
+          <div class="project-footer cat2">
+            <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+              <h4 class="project-footer-title">Description du projet</h4>
+              <p *ngFor="let ligne of project.description">
+                {{ligne}}
+                <br/>
+              </p>
+            </div>
+            <mat-card class="project-technologie" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+              <mat-card-content>
+                <h4 class="project-footer-title">Technologies</h4>
+                <ng-container *ngFor="let tech of project.technologies; let i=index">
+                  <ng-container *ngIf="i == project.technologies.length - 1; else elseTemplate">
+                    {{tech+"."}}
+                  </ng-container>
+                  <ng-template #elseTemplate>
+                    {{tech+", "}}
+                  </ng-template>
+                </ng-container>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </ng-template>
+      </div>
+    </ng-template>
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Education</h1>
     </div>
-    <div class="education">
-      <div class="education-content" *ngFor="let education of educations" [ngsReveal]="{ easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}" >
-        <div class="education-header">
-          <img class="university-logo" src="{{logoImgSrc}}{{education.universityLogo}}">
-          <div class="diplome-description">
-            <div class="diplome-title"><b>{{education.diplome}}</b></div>
-            <div>{{education.university}}</div>
-            <div>{{education.year}}</div>
+    <div class="spinner-div" *ngIf="loadingEducations | async; else educationsTemplate">
+      <mat-spinner> </mat-spinner>
+    </div>
+    <ng-template #educationsTemplate>
+      <div class="education">
+        <div class="education-content" *ngFor="let education of educations | async" [ngsReveal]="{ easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}" >
+          <div class="education-header">
+            <img class="university-logo" src="{{logoImgSrc}}{{education.universityLogo}}">
+            <div class="diplome-description">
+              <div class="diplome-title"><b>{{education.diplome}}</b></div>
+              <div>{{education.university}}</div>
+              <div>{{education.year}}</div>
+            </div>
+          </div>
+          <div class="education-description" *ngIf="education.descriptions">
+            <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
+            <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
+              {{ligne}}
+            </li>
           </div>
         </div>
-        <div class="education-description" *ngIf="education.descriptions">
-          <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
-          <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
-            {{ligne}}
-          </li>
-        </div>
       </div>
-    </div>
+    </ng-template>
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Technologies</h1>
     </div>
-    <div id="tech">
-      <div id="tech-body">
-        <mat-card id="tech-card" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
-          <mat-card-content id="tech-content">
-            <div class="tech-field" *ngFor="let tech of techs" [ngsReveal]="{delay:600, duration: 2000, interval:50 }">
-              <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
-              <div class="tech-name"> {{tech.name}} </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
+    <div class="spinner-div" *ngIf="loadingEducations | async; else techsTemplate">
+      <mat-spinner> </mat-spinner>
     </div>
+    <ng-template #techsTemplate>
+      <div id="tech">
+        <div id="tech-body">
+          <mat-card id="tech-card" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+            <mat-card-content id="tech-content">
+              <div class="tech-field" *ngFor="let tech of techs | async" [ngsReveal]="{delay:600, duration: 2000, interval:50 }">
+                <img class="tech-logo" src="{{logoImgSrc}}{{tech.logo}}">
+                <div class="tech-name"> {{tech.name}} </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </ng-template>
   </div>
   <div id="footer">
     <div id="logo">

@@ -139,6 +139,12 @@
       }
     }
 
+    .spinner-div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
     .project {
       display: flex;
       flex-direction: column;
