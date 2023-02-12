@@ -24,7 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NgsRevealModule,
     NgxPageScrollCoreModule,
     NgxPageScrollModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

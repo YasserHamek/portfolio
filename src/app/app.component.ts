@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Education } from './model/education';
-import { Project } from './model/project';
-import { StaticData } from './model/static-data';
-import { Tech } from './model/tech';
+import { StaticData, IMGSRC, LOGOIMGSRC, PROFILIMG, TITLE } from './model/static-data';
 import { NgsRevealConfig } from 'ngx-scrollreveal';
 import { BehaviorSubject, ReplaySubject, Subscription} from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { Education, Experience, Project, Tech } from './model/model';
+
+
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,10 @@ import { tap } from 'rxjs/operators';
   providers: [NgsRevealConfig]
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title: string = 'portfolio';
+  title = TITLE;
+  imgSrc = IMGSRC;
+  logoImgSrc = LOGOIMGSRC;
+  profilImg = PROFILIMG;
 
   projects: ReplaySubject<Project[]> = new ReplaySubject(1);
   loadingProjects: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
@@ -25,28 +28,33 @@ export class AppComponent implements OnInit, OnDestroy {
   techs: ReplaySubject<Tech[]> = new ReplaySubject(1);
   loadingTechs: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
+  experiences: ReplaySubject<Experience[]> = new ReplaySubject(1);
+  loadingExperiences: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
   subscription: Subscription = new Subscription();
 
-  imgSrc = "assets/img/";
-  logoImgSrc = "assets/img/logo/";
-  profilImg: string = "profil-picture.jpg";
   indexOfImageToShow: number[] = [];
+  projectsLenght: number = 0;
 
   ngOnInit(): void {
 
     //filling project
     this.projects.next(StaticData.projects);
 
-    //filling education
+    // //filling education
     this.educations.next(StaticData.educations);
 
-    //filling tech
+    // //filling tech
     this.techs.next(StaticData.techs);
+
+    //filling experiences
+    this.experiences.next(StaticData.experiences);
 
     this.subscription.add(
       this.projects.pipe(
         tap((projects) => {
           //filling image index
+          this.projectsLenght = projects.length - 1;
           for(let i = 0; i< projects.length; i++){
             this.indexOfImageToShow.push(0);
           }
@@ -66,6 +74,18 @@ export class AppComponent implements OnInit, OnDestroy {
         tap(() => this.loadingTechs.next(false)),
       ).subscribe()
     )
+
+    this.subscription.add(
+      this.experiences.pipe(
+        tap((experiences) => {
+          //filling image index
+          for(let i = 0; i< experiences.length; i++){
+            this.indexOfImageToShow.push(0);
+          }
+        }),
+        tap(() => this.loadingExperiences.next(false)),
+      ).subscribe()
+    )
   }
 
   ngOnDestroy(): void {
@@ -73,11 +93,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   changeImg(isToMoveRight: boolean, imgArrLength: number, indexOfProject: number): void{
+    console.log(" this is indexOfProject : ", indexOfProject);
     if(isToMoveRight){
       this.indexOfImageToShow[indexOfProject] = (this.indexOfImageToShow[indexOfProject] + 1) % imgArrLength
     } else if (!isToMoveRight){
       this.indexOfImageToShow[indexOfProject] = this.indexOfImageToShow[indexOfProject] == 0 ? imgArrLength - 1 : this.indexOfImageToShow[indexOfProject] - 1 ;
     }
+    console.log(" this.indexOfImageToShow : ", this.indexOfImageToShow);
   }
 }
 

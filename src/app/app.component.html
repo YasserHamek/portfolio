@@ -14,15 +14,71 @@
     <div id="presentation">
       <img id="profil-picture" src="{{imgSrc}}{{profilImg}}">
       <div id="presentation-text">
-        J’ai 28ans et j’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
-        et récemment j’ai été diplômé de l’université de Rennes 1 avec un Master en Informatique.
+        J’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
+        ensuite j’ai fait un Master en Informatique à l’université de Rennes 1.
       <br/>
         Avec un esprit d'ingénieur très développé, et un grand intérêt pour la conception et le développement de logiciels,
-        je suis à la recherche d'un poste en développement web Fullstack sur Java, Spring et Angular.
+        je suis à la recherche d'un poste en développement web Fullstack sur Java, JavaScript/TypeScrit, NodeJs, Spring, Angular, React.
       </div>
     </div>
   </div>
   <div id="body">
+
+    <!-- Experience -->
+    <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+      <h1>Experience</h1>
+    </div>
+    <div class="spinner-div" *ngIf="loadingExperiences | async; else experienceTemplate">
+      <mat-spinner> </mat-spinner>
+    </div>
+    <ng-template #experienceTemplate>
+      <div *ngFor="let experience of experiences | async; let experienceIndex = index">
+        <div class="column-container" [ngsReveal]="{ easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000}">
+          <div class="header">
+            <div class="logo-wrapper">
+              <img class="logo" *ngFor="let companyLogo of experience.companyLogo" src="{{logoImgSrc}}{{companyLogo}}">
+            </div>
+            <div class="shadowed-card green-linear-gradient-background">
+              <div class="font-size-larger"><b>{{experience.title}}</b></div>
+              <div>{{experience.company}}</div>
+              <div>{{experience.year}}</div>
+            </div>
+          </div>
+          <div class="project-picture-div" *ngIf="experience.images && experience.images.length > 0" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+            <button class="button" *ngIf="experience.images.length > 1" mat-button (click)="changeImg(false, experience.images.length, experienceIndex + this.projectsLenght)">
+              <mat-icon>chevron_left</mat-icon>
+            </button>
+            <img class="project-picture" src="{{imgSrc}}{{experience.images[indexOfImageToShow[(experienceIndex + this.projectsLenght)]]}}">
+            <button class="button" *ngIf="experience.images.length > 1" mat-button (click)="changeImg(true, experience.images.length, (experienceIndex + this.projectsLenght))">
+              <mat-icon>chevron_right</mat-icon>
+            </button>
+          </div>
+          <div class="card expended-section grey-white-linear-gradient-background">
+            <div *ngIf="experience.descriptions">
+              <p class="costum-p" *ngIf='experience.descriptions[0] != " "'> {{experience.descriptions[0]}} </p>
+              <li class="margin-left" *ngFor="let ligne of experience.descriptions | slice:1; let i=index">
+                {{ligne}}
+              </li>
+            </div>
+            <mat-card class="card blue-white-linear-gradient-background margin-top" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+              <mat-card-content>
+                <h4 class="">Technologies</h4>
+                <ng-container *ngFor="let tech of experience.technologies; let i=index">
+                  <ng-container *ngIf="i == experience.technologies.length - 1; else elseTemplate">
+                    {{tech+"."}}
+                  </ng-container>
+                  <ng-template #elseTemplate>
+                    {{tech+", "}}
+                  </ng-template>
+                </ng-container>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- Projects -->
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Projets réalisé</h1>
     </div>
@@ -34,7 +90,7 @@
         <div class="project-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           {{project.title}}
         </div>
-        <div class="project-picture-div" *ngIf="project.images" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
+        <div class="project-picture-div" *ngIf="project.images && project.images.length > 0" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
           <button class="button" *ngIf="project.images.length > 1" mat-button (click)="changeImg(false, project.images.length, projectIndex)">
             <mat-icon>chevron_left</mat-icon>
           </button>
@@ -46,7 +102,7 @@
         <div *ngIf='project.cat == "cat1"; else footerCat2' class="project-footer cat1">
           <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
             <h4 class="project-footer-title">Description du projet</h4>
-            <p *ngFor="let ligne of project.description">
+            <p *ngFor="let ligne of project.descriptions">
               {{ligne}}
               <br/>
             </p>
@@ -69,7 +125,7 @@
           <div class="project-footer cat2">
             <div class="project-description" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
               <h4 class="project-footer-title">Description du projet</h4>
-              <p *ngFor="let ligne of project.description">
+              <p *ngFor="let ligne of project.descriptions">
                 {{ligne}}
                 <br/>
               </p>
@@ -91,6 +147,8 @@
         </ng-template>
       </div>
     </ng-template>
+
+    <!-- Education -->
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Education</h1>
     </div>
@@ -103,20 +161,22 @@
           <div class="education-header">
             <img class="university-logo" src="{{logoImgSrc}}{{education.universityLogo}}">
             <div class="diplome-description">
-              <div class="diplome-title"><b>{{education.diplome}}</b></div>
+              <div class="diplome-title"><b>{{education.title}}</b></div>
               <div>{{education.university}}</div>
               <div>{{education.year}}</div>
             </div>
           </div>
           <div class="education-description" *ngIf="education.descriptions">
             <p *ngIf='education.descriptions[0] != " "'> {{education.descriptions[0]}} </p>
-            <li class="edu-des-line" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
+            <li class="margin-left" *ngFor="let ligne of education.descriptions | slice:1; let i=index">
               {{ligne}}
             </li>
           </div>
         </div>
       </div>
     </ng-template>
+
+    <!-- Technologies -->
     <div class="body-title" [ngsReveal]="{easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'30px', duration: 1000 }">
       <h1>Technologies</h1>
     </div>
