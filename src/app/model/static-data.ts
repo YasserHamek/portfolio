@@ -58,18 +58,20 @@ export class StaticData {
     technologies: ["Java 8", "JavaScript", "Typescript", "HTML", "SCSS", "Spring","Spring Boot", "Spring Data JPA",
     "Angular Material", "FlexBox", "Git", "Maven", "REST", "Eclipse", "Visual Studio Code"],
     cat: "cat2"
-  },new Project({
-    title: "Justificateur de text",
-    descriptions: ["Cette application est une API REST qui fournis deux end point, le premier permet de justifier un texte introduis dans les paramètres et le second permet de générer des JWT Token."],
-    technologies: ["NodeJS", "ExpressJS", "JWT", "Git","REST", "Visual Studio Code"],
-    cat: "cat2"
-  }),{
-    title: "Javascript Chart",
-    images: ["Vanilla-javascript-chart.png","Vanilla-javascript-chart2.png"],
-    descriptions: ["Dans ce projet, j'ai développé une charte graphique avec Vanilla Javascript, la charte affiche le score des joueurs à travers le temps, si on appuie une fois sur la barre, on aura le score qui s'affiche au-dessus de la barre, et si on appuie pour la 2e fois le score disparait."],
-    technologies: ["JavaScript","HTML", "CSS", "FlexBox", "Visual Studio Code"],
-    cat: "cat2"
-  }]
+  },
+  // new Project({
+  //   title: "Justificateur de text",
+  //   descriptions: ["Cette application est une API REST qui fournis deux end point, le premier permet de justifier un texte introduis dans les paramètres et le second permet de générer des JWT Token."],
+  //   technologies: ["NodeJS", "ExpressJS", "JWT", "Git","REST", "Visual Studio Code"],
+  //   cat: "cat2"
+  // }),{
+  //   title: "Javascript Chart",
+  //   images: ["Vanilla-javascript-chart.png","Vanilla-javascript-chart2.png"],
+  //   descriptions: ["Dans ce projet, j'ai développé une charte graphique avec Vanilla Javascript, la charte affiche le score des joueurs à travers le temps, si on appuie une fois sur la barre, on aura le score qui s'affiche au-dessus de la barre, et si on appuie pour la 2e fois le score disparait."],
+  //   technologies: ["JavaScript","HTML", "CSS", "FlexBox", "Visual Studio Code"],
+  //   cat: "cat2"
+  // }
+]
 
   //education
   public static educations: Education[] = [
