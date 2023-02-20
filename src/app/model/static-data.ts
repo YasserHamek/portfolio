@@ -26,7 +26,7 @@ export class StaticData {
   // },
   {
     title: "Realtor REST API",
-    images: [],
+    images: ["realtor-api-1.PNG", "realtor-api-2.PNG", "realtor-api-3.PNG"],
     descriptions: ["Développement d'une API REST avec NodeJs et le Framework NestJs ainsi Mongoose et MongoDB pour la base de données, "+
     "cette application s’appelle realtor-app, elle représente la partie backend d’une agence immobilière, je me suis inspiré d’une vrais agence immobilière pour le développement "+
     "des fonctionnalités, on retrouve comme fonctionnalités la gestion des maisons et les images associers, la gestion des utilisateurs, l’envoi des messages entre les "+
