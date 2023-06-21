@@ -56,7 +56,7 @@ export class StaticData {
     "on peut ajouter ou supprimer un item et on peut aussi changer le statut d’un item ce qui vas générer "+
     "le déplacement de l’item d’une colonne à une autre."],
     technologies: ["Java 8", "JavaScript", "Typescript", "HTML", "SCSS", "Spring","Spring Boot", "Spring Data JPA",
-    "Angular Material", "FlexBox", "Git", "Maven", "REST", "Eclipse", "Visual Studio Code"],
+    "Angular Material", "RxJS", "NgRx", "FlexBox", "Git", "Maven", "REST", "Eclipse", "Visual Studio Code"],
     cat: "cat2"
   },new Project({
     title: "Justificateur de text",
