@@ -1,3 +1,13 @@
+.LANG{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 2em;
+  margin-right: 1em;
+}
+
+
+
 #container {
   display: flex;
   flex-direction: column;

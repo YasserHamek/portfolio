@@ -14,6 +14,7 @@ import { Education, Experience, Project, Tech } from './model/model';
   providers: [NgsRevealConfig]
 })
 export class AppComponent implements OnInit, OnDestroy {
+  Language: BehaviorSubject<string> = new BehaviorSubject("ENG");
   title = TITLE;
   imgSrc = IMGSRC;
   logoImgSrc = LOGOIMGSRC;
@@ -37,18 +38,28 @@ export class AppComponent implements OnInit, OnDestroy {
   projectsLenght: number = 0;
 
   ngOnInit(): void {
+    this.Language.subscribe((lang: string) => {
+      if(lang === "ENG") {
+        //filling project
+        this.projects.next(StaticData.projects);
+        console.log("skjhfksdjf");
+        //filling experiences
+        this.experiences.next(StaticData.experiencesENG);
+      } else {
+        //filling project
+        this.projects.next(StaticData.projects);
+        console.log("skjhfksdjf");
+        //filling experiences
+        this.experiences.next(StaticData.experiences);
+      }
+    });
 
-    //filling project
-    this.projects.next(StaticData.projects);
 
     // //filling education
     this.educations.next(StaticData.educations);
 
     // //filling tech
     this.techs.next(StaticData.techs);
-
-    //filling experiences
-    this.experiences.next(StaticData.experiences);
 
     this.subscription.add(
       this.projects.pipe(
@@ -100,6 +111,10 @@ export class AppComponent implements OnInit, OnDestroy {
       this.indexOfImageToShow[indexOfProject] = this.indexOfImageToShow[indexOfProject] == 0 ? imgArrLength - 1 : this.indexOfImageToShow[indexOfProject] - 1 ;
     }
     console.log(" this.indexOfImageToShow : ", this.indexOfImageToShow);
+  }
+
+  changeLang(lang: string): void{
+    this.Language.next(lang);
   }
 }
 

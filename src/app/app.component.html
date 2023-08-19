@@ -1,9 +1,18 @@
+<div class="LANG">
+  <button (click)="changeLang('ENG')"  mat-button color="{{this.Language.value === 'ENG' ? 'primary' : 'basic'}}">English</button>
+  <button mat-button (click)="changeLang('FR')" color="{{this.Language.value === 'FR' ? 'primary' : 'basic'}}">Français</button>
+</div>
 <div id="container">
   <div id="welcome" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'2px', duration: 1000 }">
-    <h1 id="welcome-title">
-      Hi, mon nom est <span id="my-name">Yasser Hamek</span>
+    <h1 *ngIf="this.Language.value === 'ENG'" id="welcome-title">
+      Hi, my name is <span id="my-name">Yasser Hamek</span>
       <br id="br"/>
-      <div [ngsReveal]="{duration: 3000}">Je suis un développeur Fullstack.</div>
+      <div [ngsReveal]="{duration: 3000}">I'm Fullstack Developer Engineer.</div>
+    </h1>
+    <h1 *ngIf="this.Language.value === 'FR'" id="welcome-title">
+      Hi, je m'appelle <span id="my-name">Yasser Hamek</span>
+      <br id="br"/>
+      <div [ngsReveal]="{duration: 3000}">Je suis ingénieur développeur Fullstack.</div>
     </h1>
     <div [ngsReveal]="{duration: 4000 }">
       <a class="custom-button" href="#header">Know more</a>
@@ -13,12 +22,19 @@
     <h1>About me</h1>
     <div id="presentation">
       <img id="profil-picture" src="{{imgSrc}}{{profilImg}}">
-      <div id="presentation-text">
-        J’ai commencé mon parcours scolaire en Algérie dans le domaine du génie mécanique,
-        ensuite j’ai fait un Master en Informatique à l’université de Rennes 1.
+      <div *ngIf="this.Language.value === 'ENG'" id="presentation-text">
+        I have +10 years of university study, a Master degree in computer science and a master degree in mechanical engineering
+        and a strong experience in Fullstack web development in diverse project.
+      <br/>
+        With a highly developed engineer mind, and a great interest in software design and development,
+        I am very passionate about web development and I am looking for new mission in web development or testing.
+      </div>
+      <div *ngIf="this.Language.value === 'FR'" id="presentation-text">
+        J’ai +10 d’études supérieures, un Master en Informatique, un Master en Génie Mécanique, des connaissances approfondies
+        et une solide expérience en étude et développement web Fullstack sur divers projets.
       <br/>
         Avec un esprit d'ingénieur très développé, et un grand intérêt pour la conception et le développement de logiciels,
-        je suis à la recherche d'un poste en développement web Fullstack sur Java, JavaScript/TypeScrit, NodeJs, Spring, Angular, React.
+        je suis à la recherche d'une nouvelle mission en développement web ou bien en test.
       </div>
     </div>
   </div>
@@ -81,7 +97,8 @@
 
     <!-- Projects -->
     <div class="body-title" [ngsReveal]="{reset: true, easing: 'cubic-bezier(0.5, 0, 0, 1)', distance:'2px',duration: 1000 }">
-      <h1>Projets réalisé</h1>
+      <h1 *ngIf="this.Language.value === 'ENG'">Project</h1>
+      <h1 *ngIf="this.Language.value === 'FR'">Projets réalisé</h1>
     </div>
     <div class="spinner-div" *ngIf="loadingProjects | async; else projectsTemplate">
       <mat-spinner> </mat-spinner>
