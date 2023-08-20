@@ -201,11 +201,11 @@ public static projectsENG: Project[] = [
       company: "Freelance",
       companyLogo: ['Akrili_Dar_Logo.png'],
       year: "02/2023 - Aujourd'hui",
-      images: ["1-Login.png","2-Sing In.png","3-1- Home page.png","3-2- Home page.png","3-3- Home page.png","3-4- Home page.png"
-      ,"4-1- Searching page.png","4-2- Searching page.png","4-3- Searching page.png","4-4- Searching page.png","5-1- Property details.png","5-2- Property details.png"
-      ,"5-3- Property details.png","5-4- Property details.png","5-5- Property details when logged in.png","6-1- My Account My info section.png","6-2- My Account Security section.png","7-1- Messages.png"
-      ,"7-2- Messages with popup opened.png","8-1- Dashboard.png","8-2- Dashboard.png","8-3- Dashboard creating new house.png","8-4- Dashboard creating new house.png","9-1- Property modification.png"
-      ,"9-2- Property modification.png","9-3- Property modification.png","10-1- Favorites.png","10-2- Favorites.png"]
+      images: ["1-Login.jpg","2-Sing In.jpg","3-1- Home page.jpg","3-2- Home page.jpg","3-3- Home page.jpg","3-4- Home page.jpg"
+      ,"4-1- Searching page.jpg","4-2- Searching page.jpg","4-3- Searching page.jpg","4-4- Searching page.jpg","5-1- Property details.jpg","5-2- Property details.jpg"
+      ,"5-3- Property details.jpg","5-4- Property details.jpg","5-5- Property details when logged in.jpg","6-1- My Account My info section.jpg","6-2- My Account Security section.jpg","7-1- Messages.jpg"
+      ,"7-2- Messages with popup opened.jpg","8-1- Dashboard.jpg","8-2- Dashboard.jpg","8-3- Dashboard creating new house.jpg","8-4- Dashboard creating new house.jpg","9-1- Property modification.jpg"
+      ,"9-2- Property modification.jpg","9-3- Property modification.jpg","10-1- Favorites.jpg","10-2- Favorites.jpg"]
     },
     {
       title: "Développeur Fullstack Java/Spring/Angular",
@@ -273,11 +273,11 @@ public static projectsENG: Project[] = [
       company: "Freelance",
       companyLogo: ['Akrili_Dar_Logo.png'],
       year: "02/2023 - Now",
-      images: ["1-Login.png","2-Sing In.png","3-1- Home page.png","3-2- Home page.png","3-3- Home page.png","3-4- Home page.png"
-      ,"4-1- Searching page.png","4-2- Searching page.png","4-3- Searching page.png","4-4- Searching page.png","5-1- Property details.png","5-2- Property details.png"
-      ,"5-3- Property details.png","5-4- Property details.png","5-5- Property details when logged in.png","6-1- My Account My info section.png","6-2- My Account Security section.png","7-1- Messages.png"
-      ,"7-2- Messages with popup opened.png","8-1- Dashboard.png","8-2- Dashboard.png","8-3- Dashboard creating new house.png","8-4- Dashboard creating new house.png","9-1- Property modification.png"
-      ,"9-2- Property modification.png","9-3- Property modification.png","10-1- Favorites.png","10-2- Favorites.png"]
+      images: ["1-Login.jpg","2-Sing In.jpg","3-1- Home page.jpg","3-2- Home page.jpg","3-3- Home page.jpg","3-4- Home page.jpg"
+      ,"4-1- Searching page.jpg","4-2- Searching page.jpg","4-3- Searching page.jpg","4-4- Searching page.jpg","5-1- Property details.jpg","5-2- Property details.jpg"
+      ,"5-3- Property details.jpg","5-4- Property details.jpg","5-5- Property details when logged in.jpg","6-1- My Account My info section.jpg","6-2- My Account Security section.jpg","7-1- Messages.jpg"
+      ,"7-2- Messages with popup opened.jpg","8-1- Dashboard.jpg","8-2- Dashboard.jpg","8-3- Dashboard creating new house.jpg","8-4- Dashboard creating new house.jpg","9-1- Property modification.jpg"
+      ,"9-2- Property modification.jpg","9-3- Property modification.jpg","10-1- Favorites.jpg","10-2- Favorites.jpg"]
     },
     {
       title: "Fullstack Java/Spring/Angular Developer",
@@ -339,7 +339,7 @@ public static projectsENG: Project[] = [
     }
   ]
 
-  //tech
+  //tech Postgresql
   public static techs: Tech[] = [
     {
       logo: "Java.png",
@@ -363,6 +363,9 @@ public static projectsENG: Project[] = [
       logo: "MySQL.png",
       name: "MySQL"
     },{
+      logo: "Postgresql.png",
+      name: "Postgresql"
+    },{
       logo: "OracleSQL.png",
       name: "OracleSQL"
     },{
@@ -371,9 +374,6 @@ public static projectsENG: Project[] = [
     },{
       logo: "Spring.png",
       name: "Spring"
-    },{
-      logo: "Angular.png",
-      name: "Angular"
     },{
       logo: "Spring Boot.png",
       name: "Spring Boot"
@@ -387,20 +387,92 @@ public static projectsENG: Project[] = [
       logo: "Hibernate.png",
       name: "Hibernate"
     },{
-      logo: "Junit.png",
-      name: "Junit"
+      logo: "Solr.png",
+      name: "Apache Solr"
+    },{
+      logo: "Maven1.png",
+      name: "Maven"
+    },{
+      logo: "Tomcat.png",
+      name: "Tomcat"
+    },{
+      logo: "Gradle.png",
+      name: "Gradle"
+    },{
+      logo: "Angular.png",
+      name: "Angular"
+    },{
+      logo: "Angular Material.png",
+      name: "Angular Material"
+    },{
+      logo: "NgRx.png",
+      name: "NgRx"
+    },{
+      logo: "RxJs.png",
+      name: "RxJs"
+    },{
+      logo: "NgXs.png",
+      name: "NgXs"
+    },{
+      logo: "Git.png",
+      name: "Git"
+    },{
+      logo: "Github.png",
+      name: "Github"
+    },{
+      logo: "Gitlab.png",
+      name: "Gitlab"
     },{
       logo: "NodeJS.png",
       name: "NodeJs"
     },{
-      logo: "Flutter.png",
-      name: "Flutter"
+      logo: "NestJs.png",
+      name: "NestJs"
+    },{
+      logo: "Express.png",
+      name: "Express"
+    },{
+      logo: "Mongoose.png",
+      name: "Mongoose"
+    },{
+      logo: "MongoDB.png",
+      name: "MongoDB"
+    },{
+      logo: "React.png",
+      name: "React"
+    },{
+      logo: "Redux.png",
+      name: "Redux"
+    },{
+      logo: "React Hooks.png",
+      name: "React Hooks"
+    },{
+      logo: "Material UI.png",
+      name: "Material UI"
+    },{
+      logo: "Junit.png",
+      name: "Junit"
+    },{
+      logo: "Jest.png",
+      name: "Jest"
     },{
       logo: "Vue.png",
       name: "Vue"
     },{
-      logo: "Git.png",
-      name: "Git"
+      logo: "Confluence.png",
+      name: "Confluence"
+    },{
+      logo: "Jira.png",
+      name: "Jira"
+    },{
+      logo: "Kubernetes.png",
+      name: "Kubernetes"
+    },{
+      logo: "Docker.png",
+      name: "Docker"
+    },{
+      logo: "Jenkins.png",
+      name: "Jenkins"
     },{
       logo: "SVN.png",
       name: "SVN"
@@ -425,6 +497,45 @@ public static projectsENG: Project[] = [
     },{
       logo: "Kanban.png",
       name: "Kanban"
+    },{
+      logo: "UI UX Design.png",
+      name: "UI UX Design"
+    },{
+      logo: "GraphQL.png",
+      name: "GraphQL"
+    },{
+      logo: "Material Design.png",
+      name: "Material Design"
+    },{
+      logo: "Figma.png",
+      name: "Figma"
+    },{
+      logo: "Bootstrap.png",
+      name: "Bootstrap"
+    },{
+      logo: "mRemoteNG.png",
+      name: "mRemoteNG"
+    },{
+      logo: "DBeaver.png",
+      name: "DBeaver"
+    },{
+      logo: "AWS.png",
+      name: "AWS"
+    },{
+      logo: "Prisma.png",
+      name: "Prisma"
+    },{
+      logo: "VSCode.png",
+      name: "VSCode"
+    },{
+      logo: "Eclipse.png",
+      name: "Eclipse"
+    },{
+      logo: "Intellij.png",
+      name: "Intellij"
+    },{
+      logo: "Flutter.png",
+      name: "Flutter"
     }
   ]
 }
