@@ -191,13 +191,15 @@ public static projectsENG: Project[] = [
     {
       title: "Développeur Fullstack NodeJs/NestJs/React",
       descriptions: [
-        `Développement d'une application web qui permet la vente et location des biens immobiliers :`,
-        `Intégration du REST API Realtor App et ajout de nouvelles fonctionnalités.`,
+        `Développement d'une application web avec le NodeJs et ReactJs, l'application s'appelle AKRILI DAR, elle permet de louer, acheter ou vendre des biens immobiliers.`,
         `Création de l'architecture du backend et du frontend.`,
-        `Développement du frontend de l’application.`,
-        `Test technique et fonctionnel.`,
+        `Développement de la recherche et filterage des maisons.`,
+        `Développement d'un système de messagerie entre les utilisateurs.`,
+        `Développement de la gestion du compte utilisateur.`,
+        `Développement d'un dashboard pour la création et modification des biens immobiliers.`,
+        `Impémentation des test techniques et fonctionnels.`,
       ],
-      technologies: ['NodeJs', 'React', 'NestJs','JavaScript', 'TypeScript', 'MongoDB', 'Mongoose', 'HTML', 'SCSS', 'GitHub', 'Jest'],
+      technologies: ['NodeJs', 'ReactJs 18', 'Redux','NestJs','JavaScript', 'TypeScript', 'MongoDB', 'Mongoose','Material UI','Bootstrap', 'Figma', 'HTML', 'SCSS', 'GitHub', 'Jest'],
       company: "Freelance",
       companyLogo: ['Akrili_Dar_Logo.png'],
       year: "02/2023 - Aujourd'hui",
@@ -263,13 +265,16 @@ public static projectsENG: Project[] = [
     {
       title: "Fullstack NodeJs/NestJs/React developer",
       descriptions: [
-        `Development of a web application for selling and renting property with NodeJ and React :`,
-        `Integration of Realtor REST API and adding new functionalities.`,
-        `Creation the architechure of the frontend and backend.`,
-        `Development of the frontend.`,
-        `Functional and technical testing.`,
+        `Development of a web application with NodeJs and ReactJs, the application is called AKRILI DAR, it allow users to rent or buy real estate properties.`,
+        'Creating the backend and frontend architecture.',
+        'Development user authentication and account creation.',
+        'Development of propeties research and filtering.',
+        'Development of a messaging system between users.',
+        'Development of user account management.',
+        'Development of a dashboard for proprties creation and modification.',
+        'Impementation of technical and functional tests.',
       ],
-      technologies: ['NodeJs', 'React', 'NestJs','JavaScript', 'TypeScript', 'MongoDB', 'Mongoose', 'HTML', 'SCSS', 'GitHub', 'Jest'],
+      technologies: ['NodeJs', 'ReactJs 18', 'Redux','NestJs','JavaScript', 'TypeScript', 'MongoDB', 'Mongoose','Material UI','Bootstrap', 'Figma', 'HTML', 'SCSS', 'GitHub', 'Jest'],
       company: "Freelance",
       companyLogo: ['Akrili_Dar_Logo.png'],
       year: "02/2023 - Now",
@@ -350,6 +355,9 @@ public static projectsENG: Project[] = [
     },{
       logo: "TypeScript.png",
       name: "TypeScript"
+    },{
+      logo: "JSX.png",
+      name: "JSX"
     },{
       logo: "HTML.png",
       name: "HTML"
