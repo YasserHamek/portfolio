@@ -265,13 +265,20 @@ public static projectsENG: Project[] = [
     {
       title: "Fullstack NodeJs/NestJs/React developer",
       descriptions: [
-        `Development of a web application with NodeJs and ReactJs, the application is called AKRILI DAR, it allow users to rent or buy real estate properties.`,
+          `AKRILI DAR it's startup idea of creating a platform that allows users
+          to rent, buy or sell real estate properties. I created the application
+          from scratch, starting from defining the product specification after
+          that I created the application design with Figma, then I translated the
+          specification and design into a clear, maintainable and efficient code
+          using NodeJs and ReactJs.`,
+        'Full-stack development using ReactJs, NodeJs, NestJs and MongoDB',
         'Creating the backend and frontend architecture.',
         'Development user authentication and account creation.',
         'Development of propeties research and filtering.',
         'Development of a messaging system between users.',
         'Development of user account management.',
         'Development of a dashboard for proprties creation and modification.',
+        'Creating the application design with Figma.',
         'Impementation of technical and functional tests.',
       ],
       technologies: ['NodeJs', 'ReactJs 18', 'Redux','NestJs','JavaScript', 'TypeScript', 'MongoDB', 'Mongoose','Material UI','Bootstrap', 'Figma', 'HTML', 'SCSS', 'GitHub', 'Jest'],
@@ -287,21 +294,31 @@ public static projectsENG: Project[] = [
     {
       title: "Fullstack Java/Spring/Angular Developer",
       descriptions: [
-        `Using scrum agile method, within a team of 17 people (8 developer, 5 product owner, 2 tester, a scrum master and a project manager)
-          I work to develop new feature as well as modification and maintenance of the existing one with Java, Spring and Angular,
-          below example of some developed feature :`,
-        `Development of a reusable generic Fullstack component.`,
-        `Development of dynamic loading of pages, tab and component for
-        better performance.`,
+          `Using scrum agile methodology, within a team of 17 people (8
+            developers, 5 product owners, 2 testers, a scrum master and a project
+            manager) I did develop and support new features and I was actively
+            improving existing systems and infrastructure : `,
+        `Full-stack web development using Java, Type Script, Spring Boot,
+          Angular and PostgreSQL.`,
+        `Reduced boilerplate code by developing reusable generic
+          Full-stack component.`,
+        `Increased application performance by developing dynamic
+          loading of pages, tab and component.`,
+        `Improved remarks and responses loading and posting time by
+        reviewing and refactoring actual implementation.`,
+        `Created application sub module search and filter feature by
+        Implementing a scalable search engine Solr.`,
         `Development of REST API end points with Spring.`,
-        `Implementation of the scalable search engine Solr.`,
         `Creation and modification of Data Base table and query with SQL,
         Spring Data JPA and PostgreSQL.`,
-        `Development of the application pages with Angular Material,
-        TypeScript, HTML, SCSS.`,
-        `Rédaction of technical documentation.`,
-        `Bug correction.`,
-        `Code review.`,
+        `Ensured maintainability and code none regression by creating
+        technical and functional testing.`,
+        `Developed application front-end pages using Angular Material,
+        Type Script, HTML, SCSS.`,
+        `Redaction of technical documentation.`,
+        `Delivering a clean code and actively improving existing systems
+        and infrastructure by doing code review and refactoring.`,
+        `Deployment of new feature using Jenkins.`,
         `User story estimation.`,
         `Technical and functional testing.`,
         `Continuous integration with Gitlab and Jenkins.`,
@@ -323,9 +340,12 @@ public static projectsENG: Project[] = [
       "Naviexploit-picture-5.png","Naviexploit-picture-6.png","Naviexploit-picture-7.png","Naviexploit-picture-8.png",
       "Naviexploit-picture-9.png","Naviexploit-picture-10.png","Naviexploit-picture-11.png","Naviexploit-picture-12.png",
       "Naviexploit-picture-13.png","Naviexploit-picture-14.png"],
-      descriptions: [`Development of a single page application within a team of 8 people working with Kanban Agile methodology,
-      the application is called Naviexploit, it is used by field agent who must verify train before their departure,
-      below example of some developed feature : `,
+      descriptions: [
+          `Digital transformation of train verification procedure by creating a new
+        web application using Java, Spring and Angular, we were a team of 8
+        people working with Kanban Agile methodology : `,
+      `Full-stack development using Spring Boot, Angular, and Oracle
+        SQL.`,
       "Front-end and back-end architecture and configuration.",
       "Authentification and Autorisation with Spring Sécurity and JWT.",
       "Development of project REST API end points.",
